@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TournamentsService } from '../../tournaments.service';
+import { FirebaseTournamentResults } from '../../tournaments/firebase-tournament-results';
 
 @Component({
   selector: 'app-tournament',
@@ -11,7 +12,7 @@ export class TournamentComponent implements OnInit {
 
   tournamentId;
   private sub: any;
-  activeResults;
+  activeResults: FirebaseTournamentResults = <FirebaseTournamentResults>{};
   eventId;
   roundNumber;
   roundList;
@@ -27,8 +28,7 @@ export class TournamentComponent implements OnInit {
     this.tournamentId = this.route.params['id'];
     this.sub = this.route.params.subscribe(params => {
       this.tournamentId = params['id'];
-      this.ts.getTournamentRounds(this.tournamentId).subscribe(
-        rounds => {
+      this.ts.getTournamentRounds(this.tournamentId).subscribe(rounds => {
           this.updateRounds(rounds);
         });
 
@@ -36,11 +36,13 @@ export class TournamentComponent implements OnInit {
           this.eventId = params['event'];
           this.roundNumber = params['round'];
 
-          this.activeResults = this.ts.getTournamentResultsByEventRound(
+          this.ts.getTournamentResultsByEventRound(
               this.tournamentId,
               this.eventId,
               this.roundNumber
-            );
+            ).subscribe(results => {
+              this.activeResults = results;
+            });
         }
     });
   }

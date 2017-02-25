@@ -1,3 +1,7 @@
 <p>
   tournament works! you are looking at id: {{ tournamentId }}
 </p>
+
+<span *ngFor="let result of activeResults.results">
+	{{ result.competitor.name }}<br>
+</span>
