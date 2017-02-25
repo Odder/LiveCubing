@@ -1,0 +1,11 @@
+.tournamentList {
+  width: 100%;
+  display: flex;
+  flex-direction: row wrap;
+}
+
+.tournamentList > * {
+  width: 320px;
+  margin: 0 15px 30px 15px;
+}
+

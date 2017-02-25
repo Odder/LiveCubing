@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TournamentsService } from '../../tournaments.service';
-import { FirebaseTournamentResults } from '../../tournaments/firebase-tournament-results';
+import { TournamentResults, TournamentRoundListItem } from '../../tournaments/tournament';
 
 @Component({
   selector: 'app-tournament',
@@ -10,12 +10,12 @@ import { FirebaseTournamentResults } from '../../tournaments/firebase-tournament
 })
 export class TournamentComponent implements OnInit {
 
-  tournamentId;
   private sub: any;
-  activeResults: FirebaseTournamentResults = <FirebaseTournamentResults>{};
+  tournamentId;
   eventId;
   roundNumber;
-  roundList;
+  activeResults: TournamentResults = <TournamentResults>{};
+  roundList: Array<TournamentRoundListItem> = <Array<TournamentRoundListItem>>{};
 
   constructor(
     private router: Router,

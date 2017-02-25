@@ -1,32 +1,21 @@
+
 <h2>
 	Live Tourneys!
 </h2>
-<div>
-	<md-card>
-		<md-card-title>
-			Javla konk 2017
-		</md-card-title>
-		<md-card-content>
-			something something
-		</md-card-content>
-	</md-card>
-</div>
-<h2>
-	Live Tourneys!
-</h2>
-<div>
+<div class="tournamentList">
 	<md-card *ngFor="let tournament of tournaments">
 		<md-card-title>
 			{{ tournament.name }}
 		</md-card-title>
+		<md-card-subtitle>
+			{{ tournament.info.country }}, {{ tournament.info.location }}, {{ tournament.info.dates }}
+		</md-card-subtitle>
+		<img md-card-image src="https://www.youcandothecube.com/resources/images/solve-it/solution-stage-one.jpg">
 		<md-card-content>
-			Events: <br>
-			<ul>
-				<li *ngFor="let event of tournament.events">
-					<b>{{ event.name }}</b>
-					( <b>{{ event.rounds }}</b> rounds )
-				</li>
-			</ul>
+			<b>{{ tournament.info.competitors }} competitors</b><br>
+			<div *ngFor="let event of tournament.events">
+				<b>{{ event.name }}</b> ( <b>{{ event.rounds }}</b> rounds )
+			</div>
 		</md-card-content>
 	</md-card>
 </div>

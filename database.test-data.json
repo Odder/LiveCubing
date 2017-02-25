@@ -13,26 +13,254 @@
       "id": "skewb",
     	"rounds": 1
     } ],
-    "name" : "Something Open 2017",
+    "name" : "World Championships 2017",
+    "info": {
+      "country": "France",
+      "location": "Paris",
+      "dates": "2017-02-15 -> 2017-02-16",
+      "competitors": 973
+    },
     "results":{
       "pyraminx": {
         "round-1": {
           "fullName": "Combined first round",
+          "format": "Average of 5",
+          "startTime": "16:45",
           "results": [
             {
               "times": [
-                2.01,
-                3.42,
-                2.32,
-                1.57,
-                2.08
+                {
+                  "rawTime": 2.01,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.01"
+                },
+                {
+                  "rawTime": 3.42,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "3.42"
+                },
+                {
+                  "rawTime": 2.32,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.32"
+                },
+                {
+                  "rawTime": 1.57,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "1.57"
+                },
+                {
+                  "rawTime": 2.08,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.08"
+                }
               ],
               "competitor": {
-                "name": "Oscar Roth Andersen",
+                "name": "Drew Brads",
+                "country": "United States of Trumpistan",
                 "wca": "2008ANDE02"
               },
               "result": 2.14,
-              "annotation": "WR"
+              "best": 1.57,
+              "worst": 3.42,
+              "annotation": "WR",
+              "rank": 1
+            },
+            {
+              "times": [
+                {
+                  "rawTime": 3.05,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "3.05"
+                },
+                {
+                  "rawTime": 2.51,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.51"
+                },
+                {
+                  "rawTime": 2.94,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.94"
+                },
+                {
+                  "rawTime": 1.57,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": "DNF",
+                  "time": "DNF"
+                },
+                {
+                  "rawTime": 2.03,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 2,
+                  "hardPenalty": null,
+                  "time": "4.03+"
+                }
+              ],
+              "competitor": {
+                "name": "Oscar Roth Andersen",
+                "country": "Denmark",
+                "wca": "2008ANDE02"
+              },
+              "result": 3.34,
+              "best": 2.51,
+              "worst": "DNF",
+              "annotation": "NR",
+              "rank": 2
+            }
+          ]
+        }
+      }
+    },
+    "rounds": [
+      {
+        "eventId": "pyraminx",
+        "roundNumber": 1
+      }
+    ]
+  },
+  {
+    "events" : [ {
+      "name": "Pyraminx",
+      "id": "pyraminx",
+      "rounds": 3
+    }, {
+      "name": "Megaminx",
+      "id": "megaminx",
+      "rounds": 2
+    }, {
+      "name": "Skewb",
+      "id": "skewb",
+      "rounds": 1
+    } ],
+    "name" : "Something Open 2017",
+    "info": {
+      "country": "Latvia",
+      "location": "Salt Lake City",
+      "dates": "2017-02-15 -> 2017-02-16",
+      "competitors": 43
+    },
+    "results":{
+      "pyraminx": {
+        "round-1": {
+          "fullName": "Combined first round",
+          "format": "Average of 5",
+          "startTime": "16:45",
+          "results": [
+            {
+              "times": [
+                {
+                  "rawTime": 2.01,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.01"
+                },
+                {
+                  "rawTime": 3.42,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "3.42"
+                },
+                {
+                  "rawTime": 2.32,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.32"
+                },
+                {
+                  "rawTime": 1.57,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "1.57"
+                },
+                {
+                  "rawTime": 2.08,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.08"
+                }
+              ],
+              "competitor": {
+                "name": "Drew Brads",
+                "country": "United States of Trumpistan",
+                "wca": "2008ANDE02"
+              },
+              "result": 2.14,
+              "best": 1.57,
+              "worst": 3.42,
+              "annotation": "WR",
+              "rank": 1
+            },
+            {
+              "times": [
+                {
+                  "rawTime": 3.05,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "3.05"
+                },
+                {
+                  "rawTime": 2.51,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.51"
+                },
+                {
+                  "rawTime": 2.94,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.94"
+                },
+                {
+                  "rawTime": 1.57,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": "DNF",
+                  "time": "DNF"
+                },
+                {
+                  "rawTime": 2.03,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 2,
+                  "hardPenalty": null,
+                  "time": "4.03+"
+                }
+              ],
+              "competitor": {
+                "name": "Oscar Roth Andersen",
+                "country": "Denmark",
+                "wca": "2008ANDE02"
+              },
+              "result": 3.34,
+              "best": 2.51,
+              "worst": "DNF",
+              "annotation": "NR",
+              "rank": 2
             }
           ]
         }
