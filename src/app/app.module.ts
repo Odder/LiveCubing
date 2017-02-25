@@ -6,12 +6,14 @@ import { MaterialModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { TournamentsService } from './tournaments.service';
+import { OrgaModule } from './orga/orga.module';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './general/header/header.component';
 import { LobbyComponent } from './live/lobby/lobby.component';
 import { TournamentComponent } from './live/tournament/tournament.component';
+import { OrgaComponent } from './orga/orga/orga.component';
 
 const appRoutes:Routes = [
   {
@@ -27,8 +29,8 @@ const appRoutes:Routes = [
     component: TournamentComponent  
   },
   {
-    path: 'tournament/:id',
-    component: TournamentComponent  
+    path: 'orga',
+    loadChildren: 'app/orga/orga.module#OrgaModule'  
   },
   {
     path: '',
@@ -55,7 +57,8 @@ export const firebaseConfig = {
     AppComponent,
     HeaderComponent,
     LobbyComponent,
-    TournamentComponent
+    TournamentComponent,
+    OrgaComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +66,8 @@ export const firebaseConfig = {
     HttpModule,
     MaterialModule,
     RouterModule.forRoot(appRoutes),
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    OrgaModule
   ],
   providers: [TournamentsService],
   bootstrap: [AppComponent]
