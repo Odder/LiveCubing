@@ -1,10 +1,10 @@
 <md-sidenav-container>
 	<md-sidenav mode="side" opened="true">
 		<md-list>
-			<md-list-item> 3x3 </md-list-item>
-			<md-list-item> 4x4 </md-list-item>
-			<md-list-item> 5x5 </md-list-item>
-			<md-list-item> 6x6 </md-list-item>
+			<md-list-item *ngFor="let event of events"
+						  [routerLink]="['/tournament', tournamentId, event.id, 1]">
+				{{ event.name }}
+			</md-list-item>
 		</md-list>
 	</md-sidenav>
 	<div class="content">

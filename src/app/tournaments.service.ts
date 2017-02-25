@@ -30,15 +30,15 @@ export class TournamentsService {
 
   public getTournamentEvents(id) {
     return (
-      this.af.database.object('tournaments/' + id + '/events')
+      this.af.database.list('tournaments/' + id + '/events')
     );
   }
 
   public getTournamentResultsByEventRound(tournamentId, eventId, roundNumber ) {
     return (
       this.af.database.object(
-        'tournaments/' + tournamentId + 
-        '/results/' + eventId + 
+        'tournaments/' + tournamentId +
+        '/results/' + eventId +
         '/round-' + roundNumber
       )
     );
@@ -47,7 +47,7 @@ export class TournamentsService {
   public getTournamentRounds(tournamentId ) {
     return (
       this.af.database.object(
-        'tournaments/' + tournamentId + 
+        'tournaments/' + tournamentId +
         '/rounds'
       )
     );

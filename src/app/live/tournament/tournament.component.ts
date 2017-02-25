@@ -12,6 +12,7 @@ export class TournamentComponent implements OnInit {
 
   private sub: any;
   tournamentId;
+  events;
   eventId;
   roundNumber;
   activeResults: TournamentResults = <TournamentResults>{};
@@ -30,18 +31,23 @@ export class TournamentComponent implements OnInit {
           this.updateRounds(rounds);
         });
 
-        if(params['event'] && params['round']) {
-          this.eventId = params['event'];
-          this.roundNumber = params['round'];
+      if(params['event'] && params['round']) {
+        this.eventId = params['event'];
+        this.roundNumber = params['round'];
 
-          this.ts.getTournamentResultsByEventRound(
-              this.tournamentId,
-              this.eventId,
-              this.roundNumber
-            ).subscribe(results => {
-              this.activeResults = results;
-            });
-        }
+        this.ts.getTournamentResultsByEventRound(
+            this.tournamentId,
+            this.eventId,
+            this.roundNumber
+          ).subscribe(results => {
+            this.activeResults = results;
+          });
+      }
+
+      this.ts.getTournamentEvents(this.tournamentId).subscribe(events => {
+        this.events = events;
+      });
+
     });
   }
 
