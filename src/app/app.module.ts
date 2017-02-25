@@ -10,6 +10,7 @@ import 'hammerjs';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './general/header/header.component';
 import { LobbyComponent } from './live/lobby/lobby.component';
+import { TournamentComponent } from './live/tournament/tournament.component';
 
 const appRoutes:Routes = [
   {
@@ -17,9 +18,17 @@ const appRoutes:Routes = [
     component: LobbyComponent  
   },
   {
+    path: 'tournament/:id',
+    component: TournamentComponent  
+  },
+  {
     path: '',
     redirectTo: '/lobby',
     pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: '/lobby'
   }
 ]
 
@@ -36,7 +45,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     HeaderComponent,
-    LobbyComponent
+    LobbyComponent,
+    TournamentComponent
   ],
   imports: [
     BrowserModule,
