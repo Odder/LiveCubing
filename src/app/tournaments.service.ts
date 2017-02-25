@@ -23,9 +23,14 @@ export class TournamentsService {
   }
 
   public getTournamentResults(id) {
-
     return (
       this.af.database.object('tournaments/' + id)
+    );
+  }
+
+  public getTournamentEvents(id) {
+    return (
+      this.af.database.object('tournaments/' + id + '/events')
     );
   }
 
