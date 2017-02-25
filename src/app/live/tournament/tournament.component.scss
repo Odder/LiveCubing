@@ -1,0 +1,90 @@
+@import '~@angular/material/core/theming/all-theme';
+@import '../../../../src/theme.scss';
+
+$table-border-color: #dddddd;
+$table-background: #ffffff;
+$table-header: #ffffff;
+$table-hover: #eeeeee;
+
+md-sidenav-container {
+  height: calc(100vh - 64px);
+
+  md-sidenav {
+    min-width: 150px;
+  }
+
+  .content {
+    width: 80%;
+    margin: auto;
+
+    .table {
+      width: 100%;
+      background: $table-background;
+      border: solid 1px $table-border-color;
+      border-radius: 2px;
+
+      .table-row {
+        min-width: 100%;
+        display: flex;
+        flex-direction: row;
+        border-bottom: solid 1px $table-border-color;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      .table-column {
+        justify-content: space-between;
+        padding: 10px 10px;
+        font-size: 12px;
+        vertical-align: middle;
+        white-space: nowrap;
+        cursor: default;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 24px;
+        }
+
+        &.number {
+          flex: 0 35px;
+          text-align: right;
+        }
+
+        &.text {
+          flex: 1;
+          text-align: left;
+        }
+      }
+
+      .header {
+        @extend .table-row;
+
+        color: $table-header;
+        background: mat-color($candy-app-primary);
+
+        .column {
+          @extend .table-column;
+        }
+      }
+
+      .row {
+        @extend .table-row;
+
+        .column {
+          @extend .table-column;
+        }
+
+        &:hover {
+          background-color: $table-hover;
+        }
+      }
+    }
+  }
+}
+
+

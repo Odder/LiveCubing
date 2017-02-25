@@ -1,7 +1,35 @@
-<p>
-  tournament works! you are looking at id: {{ tournamentId }}
-</p>
-
-<span *ngFor="let result of activeResults.results">
-	{{ result.competitor.name }}<br>
-</span>
+<md-sidenav-container>
+	<md-sidenav mode="side" opened="true">
+		<md-list>
+			<md-list-item> 3x3 </md-list-item>
+			<md-list-item> 4x4 </md-list-item>
+			<md-list-item> 5x5 </md-list-item>
+			<md-list-item> 6x6 </md-list-item>
+		</md-list>
+	</md-sidenav>
+	<div class="content">
+		<p>this is tournament number: {{ tournamentId }}</p>
+		<div class="table">
+				<div class="header">
+					<div class="column number">#</div>
+					<div class="column text">Name</div>
+					<div class="column text">Country</div>
+					<div class="column number"></div>
+					<div class="column number"></div>
+					<div class="column number"></div>
+					<div class="column number"></div>
+					<div class="column number"></div>
+					<div class="column number">Avg</div>
+					<div class="column number">Best</div>
+				</div>
+				<div *ngFor="let result of activeResults.results" class="row">
+					<div class="column number">{{ result.rank }}</div>
+					<div class="column text">{{ result.competitor.name }}</div>
+					<div class="column text">{{ result.competitor.country }}</div>
+					<div *ngFor="let time of result.times" class="column number">{{ time.time }}</div>
+					<div class="column number">{{ result.result }}</div>
+					<div class="column number">{{ result.best }}</div>
+				</div>
+		</div>
+	</div>
+</md-sidenav-container>

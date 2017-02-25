@@ -6,7 +6,7 @@ import { FirebaseTournamentResults } from '../../tournaments/firebase-tournament
 @Component({
   selector: 'app-tournament',
   templateUrl: './tournament.component.html',
-  styleUrls: ['./tournament.component.css']
+  styleUrls: ['tournament.component.scss']
 })
 export class TournamentComponent implements OnInit {
 
@@ -24,8 +24,6 @@ export class TournamentComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
-    this.tournamentId = this.route.params['id'];
     this.sub = this.route.params.subscribe(params => {
       this.tournamentId = params['id'];
       this.ts.getTournamentRounds(this.tournamentId).subscribe(rounds => {
