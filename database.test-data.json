@@ -2,14 +2,47 @@
   "tournaments" : [ {
     "events" : [ {
     	"name": "Pyraminx",
+      "id": "pyraminx",
     	"rounds": 3
     }, {
     	"name": "Megaminx",
+      "id": "megaminx",
     	"rounds": 2
     }, {
     	"name": "Skewb",
+      "id": "skewb",
     	"rounds": 1
     } ],
-    "name" : "Something Open 2017"
+    "name" : "Something Open 2017",
+    "results":{
+      "pyraminx": {
+        "round-1": {
+          "fullName": "Combined first round",
+          "results": [
+            {
+              "times": [
+                2.01,
+                3.42,
+                2.32,
+                1.57,
+                2.08
+              ],
+              "competitor": {
+                "name": "Oscar Roth Andersen",
+                "wca": "2008ANDE02"
+              },
+              "result": 2.14,
+              "annotation": "WR"
+            }
+          ]
+        }
+      }
+    },
+    "rounds": [
+      {
+        "eventId": "pyraminx",
+        "roundNumber": 1
+      }
+    ]
   } ]
 }

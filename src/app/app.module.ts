@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
+import { TournamentsService } from './tournaments.service';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
@@ -16,6 +17,14 @@ const appRoutes:Routes = [
   {
     path: 'lobby',
     component: LobbyComponent  
+  },
+  {
+    path: 'tournament/:id',
+    component: TournamentComponent  
+  },
+  {
+    path: 'tournament/:id/:event/:round',
+    component: TournamentComponent  
   },
   {
     path: 'tournament/:id',
@@ -56,7 +65,7 @@ export const firebaseConfig = {
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [TournamentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
