@@ -1,0 +1,15 @@
+{
+  "tournaments" : [ {
+    "events" : [ {
+    	"name": "Pyraminx",
+    	"rounds": 3
+    }, {
+    	"name": "Megaminx",
+    	"rounds": 2
+    }, {
+    	"name": "Skewb",
+    	"rounds": 1
+    } ],
+    "name" : "Something Open 2017"
+  } ]
+}

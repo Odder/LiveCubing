@@ -1,0 +1,32 @@
+<h2>
+	Live Tourneys!
+</h2>
+<div>
+	<md-card>
+		<md-card-title>
+			Javla konk 2017
+		</md-card-title>
+		<md-card-content>
+			something something
+		</md-card-content>
+	</md-card>
+</div>
+<h2>
+	Live Tourneys!
+</h2>
+<div>
+	<md-card *ngFor="let tournament of tournaments">
+		<md-card-title>
+			{{ tournament.name }}
+		</md-card-title>
+		<md-card-content>
+			Events: <br>
+			<ul>
+				<li *ngFor="let event of tournament.events">
+					<b>{{ event.name }}</b>
+					( <b>{{ event.rounds }}</b> rounds )
+				</li>
+			</ul>
+		</md-card-content>
+	</md-card>
+</div>
