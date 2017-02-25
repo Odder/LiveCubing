@@ -44,6 +44,15 @@ export class TournamentsService {
     );
   }
 
+  public getTournamentResultsByEvent(tournamentId, eventId ) {
+    return (
+      this.af.database.object(
+        'tournaments/' + tournamentId +
+        '/results/' + eventId
+      )
+    );
+  }
+
   public getTournamentRounds(tournamentId ) {
     return (
       this.af.database.object(

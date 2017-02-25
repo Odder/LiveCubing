@@ -3,7 +3,7 @@
 	Live Tourneys!
 </h2>
 <div class="tournamentList">
-	<md-card *ngFor="let tournament of tournaments">
+	<md-card *ngFor="let tournament of tournaments" [routerLink]="['/tournament', tournament.id]">
 		<md-card-title>
 			{{ tournament.name }}
 		</md-card-title>
@@ -16,6 +16,10 @@
 			<div *ngFor="let event of tournament.events">
 				<b>{{ event.name }}</b> ( <b>{{ event.rounds }}</b> rounds )
 			</div>
+			<b>Notable cubers attending</b>:
+			<md-chip-list>
+				<md-chip *ngFor="let cuber of tournament.info.notableCubers">{{ cuber.name }}</md-chip>
+			</md-chip-list>
 		</md-card-content>
 	</md-card>
 </div>

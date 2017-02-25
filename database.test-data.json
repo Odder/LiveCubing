@@ -14,11 +14,21 @@
     	"rounds": 1
     } ],
     "name" : "World Championships 2017",
+    "id": "0",
     "info": {
       "country": "France",
       "location": "Paris",
       "dates": "2017-02-15 -> 2017-02-16",
-      "competitors": 973
+      "competitors": 973,
+      "notableCubers": [
+        {
+          "name": "Jules Desjardin",
+          "wcaId": "2010DESJ01"
+        },
+        {
+          "name": "Oscar Roth Andersen",
+          "wcaId": "2008ANDE02"
+        }]
     },
     "results":{
       "pyraminx": {
@@ -68,7 +78,7 @@
               "competitor": {
                 "name": "Drew Brads",
                 "country": "United States of Trumpistan",
-                "wca": "2008ANDE02"
+                "wca": "2010BRAD01"
               },
               "result": 2.14,
               "best": 1.57,
@@ -124,6 +134,363 @@
               "worst": "DNF",
               "annotation": "NR",
               "rank": 2
+            },
+            {
+              "times": [
+                {
+                  "rawTime": 3.96,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "3.96"
+                },
+                {
+                  "rawTime": 4.11,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "4.11"
+                },
+                {
+                  "rawTime": 2.03,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.03"
+                },
+                {
+                  "rawTime": 5.36,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "5.36"
+                },
+                {
+                  "rawTime": 2.08,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.08"
+                }
+              ],
+              "competitor": {
+                "name": "Jules Desjardin",
+                "country": "France",
+                "wca": "2010DESJ01"
+              },
+              "result": 3.38,
+              "best": 2.51,
+              "worst": "DNF",
+              "annotation": "",
+              "rank": 3
+            },
+            {
+              "times": [
+                {
+                  "rawTime": 3.86,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "3.86"
+                },
+                {
+                  "rawTime": 5.14,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "5.14"
+                },
+                {
+                  "rawTime": 2.94,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.94"
+                },
+                {
+                  "rawTime": 3.90,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "3.90"
+                },
+                {
+                  "rawTime": 3.57,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "3.57"
+                }
+              ],
+              "competitor": {
+                "name": "Daniel Egdal",
+                "country": "Denmark",
+                "wca": "2013EGDA02"
+              },
+              "result": 4.08,
+              "best": 2.51,
+              "worst": "DNF",
+              "annotation": "",
+              "rank": 4
+            }
+          ]
+        },
+        "round-2": {
+          "fullName": "Second round",
+          "format": "Average of 5",
+          "startTime": "16:45",
+          "results": [
+            {
+              "times": [
+                {
+                  "rawTime": 3.05,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "3.05"
+                },
+                {
+                  "rawTime": 2.51,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.51"
+                },
+                {
+                  "rawTime": 2.94,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.94"
+                },
+                {
+                  "rawTime": 1.57,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": "DNF",
+                  "time": "DNF"
+                },
+                {
+                  "rawTime": 2.03,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 2,
+                  "hardPenalty": null,
+                  "time": "4.03+"
+                }
+              ],
+              "competitor": {
+                "name": "Oscar Roth Andersen",
+                "country": "Denmark",
+                "wca": "2008ANDE02"
+              },
+              "result": 3.34,
+              "best": 2.51,
+              "worst": "DNF",
+              "annotation": "NR",
+              "rank": 1
+            },
+            {
+              "times": [
+                {
+                  "rawTime": 3.96,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "3.96"
+                },
+                {
+                  "rawTime": 4.11,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "4.11"
+                },
+                {
+                  "rawTime": 2.03,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.03"
+                },
+                {
+                  "rawTime": 5.36,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "5.36"
+                },
+                {
+                  "rawTime": 2.08,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.08"
+                }
+              ],
+              "competitor": {
+                "name": "Jules Desjardin",
+                "country": "France",
+                "wca": "2010DESJ01"
+              },
+              "result": 3.38,
+              "best": 2.51,
+              "worst": "DNF",
+              "annotation": "",
+              "rank": 2
+            },
+            {
+              "times": [
+                {
+                  "rawTime": 2.67,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.67"
+                },
+                {
+                  "rawTime": 2.51,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.51"
+                },
+                {
+                  "rawTime": 4.67,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "4.67"
+                },
+                {
+                  "rawTime": 2.66,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.66"
+                },
+                {
+                  "rawTime": 4.90,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "4.90"
+                }
+              ],
+              "competitor": {
+                "name": "Drew Brads",
+                "country": "United States of Trumpistan",
+                "wca": "2010BRAD01"
+              },
+              "result": 3.33,
+              "best": 1.57,
+              "worst": 3.42,
+              "annotation": "WR",
+              "rank": 3
+            }
+          ]
+        },
+        "round-3": {
+          "fullName": "GRAND FINAL!!!",
+          "format": "Average of 5",
+          "startTime": "16:45",
+          "results": [
+            {
+              "times": [
+                {
+                  "rawTime": 3.05,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "3.05"
+                },
+                {
+                  "rawTime": 2.51,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.51"
+                },
+                {
+                  "rawTime": 2.94,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.94"
+                },
+                {
+                  "rawTime": 1.57,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": "DNF",
+                  "time": "DNF"
+                },
+                {
+                  "rawTime": 2.03,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 2,
+                  "hardPenalty": null,
+                  "time": "4.03+"
+                }
+              ],
+              "competitor": {
+                "name": "Oscar Roth Andersen",
+                "country": "Denmark",
+                "wca": "2008ANDE02"
+              },
+              "result": 3.34,
+              "best": 2.51,
+              "worst": "DNF",
+              "annotation": "NR",
+              "rank": 1
+            },
+            {
+              "times": [
+                {
+                  "rawTime": 3.96,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "3.96"
+                },
+                {
+                  "rawTime": 4.11,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "4.11"
+                },
+                {
+                  "rawTime": 2.03,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.03"
+                },
+                {
+                  "rawTime": 5.36,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "5.36"
+                },
+                {
+                  "rawTime": 2.08,
+                  "penaltiesBefore": 0,
+                  "penaltiesAfter": 0,
+                  "hardPenalty": null,
+                  "time": "2.08"
+                }
+              ],
+              "competitor": {
+                "name": "Jules Desjardin",
+                "country": "France",
+                "wca": "2010DESJ01"
+              },
+              "result": 3.38,
+              "best": 2.51,
+              "worst": "DNF",
+              "annotation": "",
+              "rank": 2
             }
           ]
         }
@@ -133,13 +500,25 @@
       {
         "eventId": "pyraminx",
         "roundNumber": 1
+      },
+      {
+        "eventId": "pyraminx",
+        "roundNumber": 2
+      },
+      {
+        "eventId": "pyraminx",
+        "roundNumber": 3
+      },
+      {
+        "eventId": "megaminx",
+        "roundNumber": 1
       }
     ]
   },
   {
     "events" : [ {
-      "name": "Pyraminx",
-      "id": "pyraminx",
+      "name": "Megaminx",
+      "id": "megaminx",
       "rounds": 3
     }, {
       "name": "Megaminx",
@@ -151,11 +530,13 @@
       "rounds": 1
     } ],
     "name" : "Something Open 2017",
+    "id": "1",
     "info": {
       "country": "Latvia",
       "location": "Salt Lake City",
       "dates": "2017-02-15 -> 2017-02-16",
-      "competitors": 43
+      "competitors": 43,
+      "notableCubers": []
     },
     "results":{
       "pyraminx": {
