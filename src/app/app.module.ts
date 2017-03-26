@@ -13,24 +13,23 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './general/header/header.component';
 import { LobbyComponent } from './live/lobby/lobby.component';
 import { TournamentComponent } from './live/tournament/tournament.component';
-import { OrgaComponent } from './orga/orga/orga.component';
 
 const appRoutes:Routes = [
   {
     path: 'lobby',
-    component: LobbyComponent  
+    component: LobbyComponent
   },
   {
     path: 'tournament/:id',
-    component: TournamentComponent  
+    component: TournamentComponent
   },
   {
     path: 'tournament/:id/:event/:round',
-    component: TournamentComponent  
+    component: TournamentComponent
   },
   {
     path: 'orga',
-    loadChildren: 'app/orga/orga.module#OrgaModule'  
+    loadChildren: 'app/orga/orga.module#OrgaModule'
   },
   {
     path: '',
@@ -57,8 +56,7 @@ export const firebaseConfig = {
     AppComponent,
     HeaderComponent,
     LobbyComponent,
-    TournamentComponent,
-    OrgaComponent
+    TournamentComponent
   ],
   imports: [
     BrowserModule,
