@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MaterialModule } from '@angular/material';
 import { TournamentComponent } from './tournament/tournament.component';
 import { OrgaComponent } from './orga/orga.component';
+import { CommonModule } from '@angular/common';
 
 const orgaRoutes: Routes = [
   {
@@ -11,7 +13,7 @@ const orgaRoutes: Routes = [
       {
         path: '',
         children: [
-          {path: 'tournament', component: TournamentComponent}
+          {path: 'tournament/:id', component: TournamentComponent}
         ]
       }
 
@@ -20,8 +22,13 @@ const orgaRoutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forChild(orgaRoutes)
+    RouterModule.forChild(orgaRoutes),
+    MaterialModule,
+    CommonModule
   ],
-  declarations: [TournamentComponent]
+  declarations: [
+    TournamentComponent,
+    OrgaComponent
+    ]
 })
 export class OrgaModule { }

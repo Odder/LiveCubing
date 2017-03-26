@@ -1,0 +1,18 @@
+.container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  .event {
+    margin: 10px;
+    flex: 1 0 40%;
+  }
+
+  .round-content {
+    margin: 10px 0;
+  }
+}
+
+
