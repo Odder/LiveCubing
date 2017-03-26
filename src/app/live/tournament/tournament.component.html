@@ -2,13 +2,24 @@
 	<md-sidenav mode="side" opened="true">
 		<md-list>
 			<md-list-item *ngFor="let event of events"
-						  [routerLink]="['/tournament', tournamentId, event.id, 1]">
+						  [routerLink]="[ '/tournament', tournamentId, event.id, 1 ]">
 				{{ event.name }}
 			</md-list-item>
 		</md-list>
 	</md-sidenav>
 	<div class="content">
-		<p>this is tournament number: {{ tournamentId }}</p>
+
+		<div class="title">
+			<div class="h2">{{ eventId }}</div>
+			<nav md-tab-nav-bar>
+				<a md-tab-link *ngFor="let round of roundList"
+				   [routerLink]="[ '/tournament', tournamentId, eventId, round.roundNumber ]"
+				   [active]="round.roundNumber == roundNumber">
+					Round {{ round.roundNumber }}
+				</a>
+			</nav>
+		</div>
+
 		<div class="table">
 				<div class="header">
 					<div class="column number">#</div>
@@ -19,7 +30,7 @@
 					<div class="column number"></div>
 					<div class="column number"></div>
 					<div class="column number"></div>
-					<div class="column number">Avg</div>
+					<div class="column number average">Avg</div>
 					<div class="column number">Best</div>
 				</div>
 				<div *ngFor="let result of activeResults.results" class="row">
@@ -27,9 +38,10 @@
 					<div class="column text">{{ result.competitor.name }}</div>
 					<div class="column text">{{ result.competitor.country }}</div>
 					<div *ngFor="let time of result.times" class="column number">{{ time.time }}</div>
-					<div class="column number">{{ result.result }}</div>
+					<div class="column number average">{{ result.result }}</div>
 					<div class="column number">{{ result.best }}</div>
 				</div>
 		</div>
+
 	</div>
 </md-sidenav-container>

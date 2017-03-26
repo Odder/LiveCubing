@@ -16,7 +16,8 @@ export class TournamentComponent implements OnInit {
   eventId;
   roundNumber;
   activeResults: TournamentResults = <TournamentResults>{};
-  roundList: Array<TournamentRoundListItem> = <Array<TournamentRoundListItem>>{};
+  roundList: Array<TournamentRoundListItem> = <Array<TournamentRoundListItem>>[];
+  roundListByEvent: [];
 
   constructor(
     private router: Router,
@@ -48,11 +49,16 @@ export class TournamentComponent implements OnInit {
         this.events = events;
       });
 
+      this.ts.getTournamentResultsByEvent(this.tournamentId, this.eventId).subscribe(resultsByEvent => {
+        this.roundListByEvent = resultsByEvent;
+      })
+
     });
   }
 
   updateRounds(rounds) {
     this.roundList = rounds;
+    console.log(rounds);
   }
 
 }
