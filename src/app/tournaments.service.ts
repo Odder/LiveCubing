@@ -34,7 +34,7 @@ export class TournamentsService {
     );
   }
 
-  public getTournamentResultsByEventRound(tournamentId, eventId, roundNumber ) {
+  public getTournamentRoundByEventRound(tournamentId, eventId, roundNumber ) {
     return (
       this.af.database.object(
         'tournaments/' + tournamentId +
@@ -44,9 +44,25 @@ export class TournamentsService {
     );
   }
 
+  public getTournamentResultsByEventRound(tournamentId, eventId, roundNumber ) {
+    return (
+      this.af.database.list(
+        'tournaments/' + tournamentId +
+        '/results/' + eventId +
+        '/round-' + roundNumber +
+        '/results',
+        {
+          'query': {
+            'orderByChild': 'rank'
+          }
+        }
+      )
+    );
+  }
+
   public getTournamentResultsByEvent(tournamentId, eventId ) {
     return (
-      this.af.database.object(
+      this.af.database.list(
         'tournaments/' + tournamentId +
         '/results/' + eventId
       )

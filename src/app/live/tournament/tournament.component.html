@@ -12,10 +12,10 @@
 		<div class="title">
 			<div class="h2">{{ eventId }}</div>
 			<nav md-tab-nav-bar>
-				<a md-tab-link *ngFor="let round of roundList"
+				<a md-tab-link *ngFor="let round of roundListByEvent"
 				   [routerLink]="[ '/tournament', tournamentId, eventId, round.roundNumber ]"
 				   [active]="round.roundNumber == roundNumber">
-					Round {{ round.roundNumber }}
+					{{ round.fullName }}
 				</a>
 			</nav>
 		</div>
@@ -33,7 +33,7 @@
 					<div class="column number average">Avg</div>
 					<div class="column number">Best</div>
 				</div>
-				<div *ngFor="let result of activeResults.results" class="row">
+				<div *ngFor="let result of activeResults" class="row">
 					<div class="column number">{{ result.rank }}</div>
 					<div class="column text">{{ result.competitor.name }}</div>
 					<div class="column text">{{ result.competitor.country }}</div>

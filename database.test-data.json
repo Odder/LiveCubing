@@ -36,6 +36,7 @@
           "fullName": "Combined first round",
           "format": "Average of 5",
           "startTime": "16:45",
+          "roundNumber": 1,
           "results": [
             {
               "times": [
@@ -239,6 +240,7 @@
           "fullName": "Second round",
           "format": "Average of 5",
           "startTime": "16:45",
+          "roundNumber": 2,
           "results": [
             {
               "times": [
@@ -393,6 +395,7 @@
           "fullName": "GRAND FINAL!!!",
           "format": "Average of 5",
           "startTime": "16:45",
+          "roundNumber": 3,
           "results": [
             {
               "times": [
