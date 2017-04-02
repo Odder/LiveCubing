@@ -7,11 +7,12 @@
 			</md-list-item>
 		</md-list>
 	</md-sidenav>
-	<div class="content">
 
-		<div class="title">
-			<div class="h2">{{ eventId }}</div>
-			<nav md-tab-nav-bar>
+	<div class="tournament__content">
+
+		<div class="tournament__header">
+			<div class="tournament__header_title">{{ eventId }}</div>
+			<nav class="tournament__header_rounds" md-tab-nav-bar>
 				<a md-tab-link *ngFor="let round of roundListByEvent"
 				   [routerLink]="[ '/tournament', tournamentId, eventId, round.roundNumber ]"
 				   [active]="round.roundNumber == roundNumber">

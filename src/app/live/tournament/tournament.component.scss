@@ -13,23 +13,24 @@ md-sidenav-container {
     min-width: 150px;
   }
 
-  .content {
+  .tournament__content {
     width: 90%;
     margin: auto;
 
-    .title {
+    .tournament__header {
       display: flex;
       flex-direction: row;
       margin: 25px 0;
       align-items: center;
 
-      .h2 {
+      .tournament__header_title {
         text-transform: uppercase;
         font-size: 20px;
         font-weight: 400;
+        margin-right: 25px;
       }
 
-      nav {
+      .tournament__header_rounds {
         border-bottom: none;
       }
     }
