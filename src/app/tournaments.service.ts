@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFire } from 'angularfire2';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Injectable()
 export class TournamentsService {
@@ -7,8 +7,8 @@ export class TournamentsService {
   tournamentsRef;
   tournamentRef;
 
-  constructor(public af: AngularFire) {
-    this.tournamentsRef = this.af.database.list('tournaments');
+  constructor(public af: AngularFireDatabase) {
+    this.tournamentsRef = this.af.list('tournaments');
   }
 
   public getTournaments() {
@@ -18,25 +18,25 @@ export class TournamentsService {
   }
 
   public setTournament(id) {
-    this.tournamentRef = this.af.database.object('tournaments');
+    this.tournamentRef = this.af.object('tournaments');
     this.tournamentRef = this.tournamentRef.child('id');
   }
 
   public getTournamentResults(id) {
     return (
-      this.af.database.object('tournaments/' + id)
+      this.af.object('tournaments/' + id)
     );
   }
 
   public getTournamentEvents(id) {
     return (
-      this.af.database.list('tournaments/' + id + '/events')
+      this.af.list('tournaments/' + id + '/events')
     );
   }
 
   public getTournamentRoundByEventRound(tournamentId, eventId, roundNumber ) {
     return (
-      this.af.database.object(
+      this.af.object(
         'tournaments/' + tournamentId +
         '/results/' + eventId +
         '/round-' + roundNumber
@@ -46,7 +46,7 @@ export class TournamentsService {
 
   public getTournamentResultsByEventRound(tournamentId, eventId, roundNumber ) {
     return (
-      this.af.database.list(
+      this.af.list(
         'tournaments/' + tournamentId +
         '/results/' + eventId +
         '/round-' + roundNumber +
@@ -62,7 +62,7 @@ export class TournamentsService {
 
   public getTournamentResultsByEvent(tournamentId, eventId ) {
     return (
-      this.af.database.list(
+      this.af.list(
         'tournaments/' + tournamentId +
         '/results/' + eventId
       )
@@ -71,7 +71,7 @@ export class TournamentsService {
 
   public getTournamentRounds(tournamentId ) {
     return (
-      this.af.database.object(
+      this.af.object(
         'tournaments/' + tournamentId +
         '/rounds'
       )

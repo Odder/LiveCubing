@@ -6,7 +6,7 @@ import { TournamentResults, TournamentRoundListItem } from '../../tournaments/to
 @Component({
   selector: 'app-tournament',
   templateUrl: './tournament.component.html',
-  styleUrls: ['tournament.component.scss']
+  styleUrls: ['tournament.component.scss'],
 })
 export class TournamentComponent implements OnInit {
 

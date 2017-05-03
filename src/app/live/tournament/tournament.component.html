@@ -1,10 +1,10 @@
 <md-sidenav-container>
 	<md-sidenav mode="side" opened="true">
 		<md-list>
-			<md-list-item *ngFor="let event of events"
+			<a md-list-item *ngFor="let event of events"
 						  [routerLink]="[ '/tournament', tournamentId, event.id, 1 ]">
 				{{ event.name }}
-			</md-list-item>
+			</a>
 		</md-list>
 	</md-sidenav>
 

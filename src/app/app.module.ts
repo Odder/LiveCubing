@@ -2,17 +2,31 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabase } from 'angularfire2/database';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+
 import { TournamentsService } from './tournaments.service';
 import { OrgaModule } from './orga/orga.module';
 import 'hammerjs';
+
+import {
+  MdToolbarModule,
+  MdChipsModule,
+  MdTabsModule,
+  MdCardModule,
+  MdIconModule,
+  MdListModule,
+  MdButtonModule,
+  MdSidenavModule
+} from '@angular/material'
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './general/header/header.component';
 import { LobbyComponent } from './live/lobby/lobby.component';
 import { TournamentComponent } from './live/tournament/tournament.component';
+
 
 const appRoutes:Routes = [
   {
@@ -62,12 +76,20 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule,
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig),
+    MdToolbarModule,
+    MdChipsModule,
+    MdTabsModule,
+    MdCardModule,
+    MdIconModule,
+    MdListModule,
+    MdSidenavModule,
+    MdButtonModule,
+    BrowserAnimationsModule,
     OrgaModule
   ],
-  providers: [TournamentsService],
+  providers: [TournamentsService, AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,13 +6,15 @@
 			<md-tab-group>
 				<md-tab *ngFor="let round of event.rounds" label="{{ round.round }}">
 					<div class="round-content">
-						{{round.round }} round,
 						{{ round.competitors }} competitors,
 						Cut off: {{ round.cutoff }},
 						Time Limit: {{ round.timeLimit }},
 						{{ round.proceed }} proceed,
 						{{ round.groups }} groups
 					</div>
+				</md-tab>
+				<md-tab>
+					<ng-template md-tab-label><md-icon>add</md-icon></ng-template>
 				</md-tab>
 			</md-tab-group>
 		</md-card-content>

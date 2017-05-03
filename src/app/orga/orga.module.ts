@@ -1,6 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MaterialModule } from '@angular/material';
+import {
+  MdToolbarModule,
+  MdChipsModule,
+  MdTabsModule,
+  MdCardModule,
+  MdIconModule,
+  MdListModule,
+  MdButtonModule,
+  MdSidenavModule
+} from '@angular/material'
 import { TournamentComponent } from './tournament/tournament.component';
 import { OrgaComponent } from './orga/orga.component';
 import { CommonModule } from '@angular/common';
@@ -23,7 +32,14 @@ const orgaRoutes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forChild(orgaRoutes),
-    MaterialModule,
+    MdToolbarModule,
+    MdChipsModule,
+    MdTabsModule,
+    MdCardModule,
+    MdIconModule,
+    MdListModule,
+    MdSidenavModule,
+    MdButtonModule,
     CommonModule
   ],
   declarations: [
