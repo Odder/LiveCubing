@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TournamentsService } from '../../tournaments.service';
-import { TournamentResults, TournamentRoundListItem } from '../../models/tournament';
+import { TournamentResults, TournamentRoundListItem } from '../../models/models.tournament';
 
 @Component({
   selector: 'app-tournament',
