@@ -1,4 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { Apollo } from 'apollo-angular';
+import gql from 'graphql-tag';
+
+const AllCompetitors = gql`
+  query AllCompetitors { 
+    allCompetitions(first: 5) {
+      name
+      events {
+        name
+        formats {
+          name
+        }
+      }
+      competitors {
+        name
+        records {
+          region
+        }
+      }
+    }
+  }
+`;
+
+interface QueryResponse{
+  data
+  loading
+}
 
 @Component({
   selector: 'app-tournament',
@@ -8,8 +35,9 @@ import { Component, OnInit } from '@angular/core';
 export class TournamentComponent implements OnInit {
 
   events;
+  loading: boolean;
 
-  constructor() {
+  constructor(private apollo: Apollo) {
     this.events = [
       {
         "name": "3x3",
@@ -66,7 +94,14 @@ export class TournamentComponent implements OnInit {
     ]
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.apollo.watchQuery<QueryResponse>({
+      query: AllCompetitors
+    }).subscribe(({data}) => {
+      this.loading = data.loading;
+      console.log(data);
+    });
+  }
 
 
 

@@ -5,7 +5,10 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ApolloClient, createNetworkInterface } from 'apollo-client';
+import {ApolloModule} from 'apollo-angular';
 
 import { TournamentsService } from './tournaments.service';
 import { OrgaModule } from './orga/orga.module';
@@ -27,6 +30,15 @@ import { HeaderComponent } from './general/header/header.component';
 import { LobbyComponent } from './live/lobby/lobby.component';
 import { TournamentComponent } from './live/tournament/tournament.component';
 
+const client = new ApolloClient({
+  networkInterface: createNetworkInterface({
+    uri: 'https://api.graph.cool/simple/v1/cj2alutw9bc0d0199judyfdoj'
+  }),
+});
+
+export function provideClient(): ApolloClient {
+  return client;
+}
 
 const appRoutes:Routes = [
   {
@@ -70,7 +82,7 @@ export const firebaseConfig = {
     AppComponent,
     HeaderComponent,
     LobbyComponent,
-    TournamentComponent
+    TournamentComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,7 +99,8 @@ export const firebaseConfig = {
     MdSidenavModule,
     MdButtonModule,
     BrowserAnimationsModule,
-    OrgaModule
+    OrgaModule,
+    ApolloModule.forRoot(provideClient)
   ],
   providers: [TournamentsService, AngularFireDatabase],
   bootstrap: [AppComponent]

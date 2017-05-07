@@ -24,20 +24,20 @@ export class TournamentsService {
 
   public getTournamentResults(id) {
     return (
-      this.af.object('tournaments/' + id)
+      this.af.object('models/' + id)
     );
   }
 
   public getTournamentEvents(id) {
     return (
-      this.af.list('tournaments/' + id + '/events')
+      this.af.list('models/' + id + '/events')
     );
   }
 
   public getTournamentRoundByEventRound(tournamentId, eventId, roundNumber ) {
     return (
       this.af.object(
-        'tournaments/' + tournamentId +
+        'models/' + tournamentId +
         '/results/' + eventId +
         '/round-' + roundNumber
       )
@@ -47,7 +47,7 @@ export class TournamentsService {
   public getTournamentResultsByEventRound(tournamentId, eventId, roundNumber ) {
     return (
       this.af.list(
-        'tournaments/' + tournamentId +
+        'models/' + tournamentId +
         '/results/' + eventId +
         '/round-' + roundNumber +
         '/results',
@@ -63,7 +63,7 @@ export class TournamentsService {
   public getTournamentResultsByEvent(tournamentId, eventId ) {
     return (
       this.af.list(
-        'tournaments/' + tournamentId +
+        'models/' + tournamentId +
         '/results/' + eventId
       )
     );
@@ -72,7 +72,7 @@ export class TournamentsService {
   public getTournamentRounds(tournamentId ) {
     return (
       this.af.object(
-        'tournaments/' + tournamentId +
+        'models/' + tournamentId +
         '/rounds'
       )
     );
