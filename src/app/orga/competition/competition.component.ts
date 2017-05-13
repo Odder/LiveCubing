@@ -28,11 +28,11 @@ interface QueryResponse{
 }
 
 @Component({
-  selector: 'app-tournament',
-  templateUrl: './tournament.component.html',
-  styleUrls: ['./tournament.component.scss'],
+  selector: 'app-competition',
+  templateUrl: './competition.component.html',
+  styleUrls: ['./competition.component.scss'],
 })
-export class TournamentComponent implements OnInit {
+export class CompetitionComponent implements OnInit {
 
   events;
   loading: boolean;

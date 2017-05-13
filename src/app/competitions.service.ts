@@ -2,52 +2,52 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 @Injectable()
-export class TournamentsService {
+export class CompetitionsService {
 
-  tournamentsRef;
-  tournamentRef;
+  competitionsRef;
+  competitionRef;
 
   constructor(public af: AngularFireDatabase) {
-    this.tournamentsRef = this.af.list('tournaments');
+    this.competitionsRef = this.af.list('competitions');
   }
 
-  public getTournaments() {
+  public getCompetitions() {
     return (
-      this.tournamentsRef
+      this.competitionsRef
     );
   }
 
-  public setTournament(id) {
-    this.tournamentRef = this.af.object('tournaments');
-    this.tournamentRef = this.tournamentRef.child('id');
+  public setCompetition(id) {
+    this.competitionRef = this.af.object('competitions');
+    this.competitionRef = this.competitionRef.child('id');
   }
 
-  public getTournamentResults(id) {
+  public getCompetitionResults(id) {
     return (
       this.af.object('models/' + id)
     );
   }
 
-  public getTournamentEvents(id) {
+  public getCompetitionEvents(id) {
     return (
       this.af.list('models/' + id + '/events')
     );
   }
 
-  public getTournamentRoundByEventRound(tournamentId, eventId, roundNumber ) {
+  public getCompetitionRoundByEventRound(competitionId, eventId, roundNumber ) {
     return (
       this.af.object(
-        'models/' + tournamentId +
+        'models/' + competitionId +
         '/results/' + eventId +
         '/round-' + roundNumber
       )
     );
   }
 
-  public getTournamentResultsByEventRound(tournamentId, eventId, roundNumber ) {
+  public getCompetitionResultsByEventRound(competitionId, eventId, roundNumber ) {
     return (
       this.af.list(
-        'models/' + tournamentId +
+        'models/' + competitionId +
         '/results/' + eventId +
         '/round-' + roundNumber +
         '/results',
@@ -60,19 +60,19 @@ export class TournamentsService {
     );
   }
 
-  public getTournamentResultsByEvent(tournamentId, eventId ) {
+  public getCompetitionResultsByEvent(competitionId, eventId ) {
     return (
       this.af.list(
-        'models/' + tournamentId +
+        'models/' + competitionId +
         '/results/' + eventId
       )
     );
   }
 
-  public getTournamentRounds(tournamentId ) {
+  public getCompetitionRounds(competitionId ) {
     return (
       this.af.object(
-        'models/' + tournamentId +
+        'models/' + competitionId +
         '/rounds'
       )
     );

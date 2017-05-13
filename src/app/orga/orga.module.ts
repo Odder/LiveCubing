@@ -10,7 +10,7 @@ import {
   MdButtonModule,
   MdSidenavModule
 } from '@angular/material'
-import { TournamentComponent } from './tournament/tournament.component';
+import { CompetitionComponent } from './competition/competition.component';
 import { OrgaComponent } from './orga/orga.component';
 import { CommonModule } from '@angular/common';
 
@@ -22,7 +22,7 @@ const orgaRoutes: Routes = [
       {
         path: '',
         children: [
-          {path: 'tournament/:id', component: TournamentComponent}
+          {path: 'competition/:id', component: CompetitionComponent}
         ]
       }
 
@@ -43,7 +43,7 @@ const orgaRoutes: Routes = [
     CommonModule
   ],
   declarations: [
-    TournamentComponent,
+    CompetitionComponent,
     OrgaComponent
     ]
 })

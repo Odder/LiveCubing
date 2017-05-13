@@ -1,5 +1,5 @@
 {
-  "tournaments" : [ {
+  "competitions" : [ {
     "events" : [ {
     	"name": "Pyraminx",
       "id": "pyraminx",

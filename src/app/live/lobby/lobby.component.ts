@@ -1,32 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo} from 'apollo-angular';
 import gql from 'graphql-tag';
-import {Tournament} from "../../models/models.tournament";
+import {Competition} from "../../models/models.competition";
 
 interface QueryResponse {
   loading: boolean
-  allCompetitions: Tournament
+  allCompetitions: Competition
 }
 
 const allCompetitions = gql`
   query AllCompetitors {
-  allCompetitions {
-    id
-    name
-    country
-    city
-    startDate
-    endDate
-    competitors(filter: {isNotable: true}) {
+    allCompetitions {
+      id
       name
-    }
-    _competitorsMeta {count}
-    events {
-      name
-      _roundsMeta {count}
+      country
+      city
+      startDate
+      endDate
+      competitors(filter: {isNotable: true}) {
+        name
+      }
+      _competitorsMeta {
+        count
+      }
+      events {
+        puzzle {
+          name
+        }
+        _roundsMeta {
+          count
+        }
+      }
     }
   }
-}
 `
 
 @Component({
@@ -36,7 +42,7 @@ const allCompetitions = gql`
 })
 export class LobbyComponent implements OnInit {
 
-  tournaments: any;
+  competitions: any;
   isLoading: boolean;
 
   constructor( private apollo: Apollo) {}
@@ -45,8 +51,9 @@ export class LobbyComponent implements OnInit {
     this.apollo.query<QueryResponse>({
       query: allCompetitions
     }).subscribe(({data}) => {
+      console.log(data);
       this.isLoading = data.loading;
-      this.tournaments = data.allCompetitions;
+      this.competitions = data.allCompetitions;
     });
   }
 

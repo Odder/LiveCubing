@@ -1,6 +1,6 @@
 import {MetaData} from "./models.metaData";
 
-export interface Events {
+export interface Event{
   name: string,
   format: string,
   _roundsMeta: MetaData,

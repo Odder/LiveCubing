@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ApolloClient, createNetworkInterface } from 'apollo-client';
 import {ApolloModule} from 'apollo-angular';
 
-import { TournamentsService } from './tournaments.service';
+import { CompetitionsService } from './competitions.service';
 import { OrgaModule } from './orga/orga.module';
 import 'hammerjs';
 
@@ -28,7 +28,7 @@ import {
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './general/header/header.component';
 import { LobbyComponent } from './live/lobby/lobby.component';
-import { TournamentComponent } from './live/tournament/tournament.component';
+import { CompetitionComponent } from './live/competition/competition.component';
 
 const client = new ApolloClient({
   networkInterface: createNetworkInterface({
@@ -46,12 +46,8 @@ const appRoutes:Routes = [
     component: LobbyComponent
   },
   {
-    path: 'tournament/:id',
-    component: TournamentComponent
-  },
-  {
-    path: 'tournament/:id/:event/:round',
-    component: TournamentComponent
+    path: 'competition/:name',
+    component: CompetitionComponent
   },
   {
     path: 'orga',
@@ -82,7 +78,7 @@ export const firebaseConfig = {
     AppComponent,
     HeaderComponent,
     LobbyComponent,
-    TournamentComponent,
+    CompetitionComponent,
   ],
   imports: [
     BrowserModule,
@@ -102,7 +98,7 @@ export const firebaseConfig = {
     OrgaModule,
     ApolloModule.forRoot(provideClient)
   ],
-  providers: [TournamentsService, AngularFireDatabase],
+  providers: [CompetitionsService, AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
