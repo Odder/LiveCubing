@@ -1,25 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { Competition } from '../../../models/models.competition';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
-import { Competition } from '../../models/models.competition';
 
-interface QueryResponse {
-  loading: boolean;
-  allCompetitions: Competition;
-}
-
-const allCompetitions = gql`
-  query AllCompetitors {
+const allCompetitions  = gql `
+  query {
     allCompetitions {
       id
+      slug
       name
       country
       city
       startDate
       endDate
-      competitors(filter: {isNotable: true}) {
-        name
-      }
       _competitorsMeta {
         count
       }
@@ -35,26 +28,25 @@ const allCompetitions = gql`
   }
 `;
 
+interface QueryResponse {
+  allCompetitions: Competition[];
+}
+
 @Component({
   selector: 'app-lobby',
   templateUrl: './lobby.component.html',
-  styleUrls: ['./lobby.component.css'],
+  styleUrls: ['./lobby.component.scss']
 })
 export class LobbyComponent implements OnInit {
+  competitions: Competition[];
 
-  competitions: any;
-  isLoading: boolean;
-
-  constructor( private apollo: Apollo) {}
+  constructor(private apollo: Apollo) { }
 
   ngOnInit() {
     this.apollo.query<QueryResponse>({
       query: allCompetitions
     }).subscribe(({data}) => {
-      console.log(data);
-      this.isLoading = data.loading;
       this.competitions = data.allCompetitions;
     });
   }
-
 }

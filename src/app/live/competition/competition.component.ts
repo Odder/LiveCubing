@@ -3,10 +3,10 @@ import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 
 import { Event } from '../../models/models.event';
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params} from '@angular/router';
 
 interface QueryResponse {
-  Competition: any
+  Competition: any;
 }
 
 const AllEventsForCompetition = gql`
@@ -25,7 +25,7 @@ const AllEventsForCompetition = gql`
       }
     }
   }
-`
+`;
 
 @Component({
   selector: 'app-competition',
@@ -46,9 +46,9 @@ export class CompetitionComponent implements OnInit {
           variables: {
             name: this.competitionName
           }
-        })
+        });
       })
-      .subscribe(({data}) =>{
+      .subscribe(({data}) => {
         this.events = data.Competition.events;
         console.log(this.events);
       });

@@ -56,6 +56,7 @@
     "no-use-before-declare": true,
     "no-var-keyword": true,
     "object-literal-sort-keys": false,
+    "object-curly-spacing": ["error", "always"],
     "one-line": [
       true,
       "check-open-brace",

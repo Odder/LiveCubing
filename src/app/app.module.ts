@@ -11,7 +11,7 @@ import { ApolloClient, createNetworkInterface } from 'apollo-client';
 import {ApolloModule} from 'apollo-angular';
 
 import { CompetitionsService } from './competitions.service';
-import { OrgaModule } from './orga/orga.module';
+import { OrganisationModule } from './organisation.module/organisation.module';
 import 'hammerjs';
 
 import {
@@ -23,7 +23,7 @@ import {
   MdListModule,
   MdButtonModule,
   MdSidenavModule
-} from '@angular/material'
+} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './general/header/header.component';
@@ -40,7 +40,7 @@ export function provideClient(): ApolloClient {
   return client;
 }
 
-const appRoutes:Routes = [
+const appRoutes: Routes = [
   {
     path: 'lobby',
     component: LobbyComponent
@@ -50,8 +50,8 @@ const appRoutes:Routes = [
     component: CompetitionComponent
   },
   {
-    path: 'orga',
-    loadChildren: 'app/orga/orga.module#OrgaModule'
+    path: 'organisation',
+    loadChildren: 'app/organisation.module/organisation.module#OrganisationModule'
   },
   {
     path: '',
@@ -62,14 +62,14 @@ const appRoutes:Routes = [
     path: '**',
     redirectTo: '/lobby'
   }
-]
+];
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyC4vFNKWMVSSSlUmiVAc1hS5UzRgdcVZkg",
-  authDomain: "livecubing-6f143.firebaseapp.com",
-  databaseURL: "https://livecubing-6f143.firebaseio.com",
-  storageBucket: "livecubing-6f143.appspot.com",
-  messagingSenderId: "969954109134"
+  apiKey: 'AIzaSyC4vFNKWMVSSSlUmiVAc1hS5UzRgdcVZkg',
+  authDomain: 'livecubing-6f143.firebaseapp.com',
+  databaseURL: 'https://livecubing-6f143.firebaseio.com',
+  storageBucket: 'livecubing-6f143.appspot.com',
+  messagingSenderId: '969954109134'
 };
 
 
@@ -95,7 +95,7 @@ export const firebaseConfig = {
     MdSidenavModule,
     MdButtonModule,
     BrowserAnimationsModule,
-    OrgaModule,
+    OrganisationModule,
     ApolloModule.forRoot(provideClient)
   ],
   providers: [CompetitionsService, AngularFireDatabase],

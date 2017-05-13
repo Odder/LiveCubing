@@ -4,6 +4,7 @@ import { Competitors } from "./models.competitor";
 
 export interface Competition {
   id: string,
+  slug: string,
   name: string,
   country: string,
   city: string,
