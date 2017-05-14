@@ -1,0 +1,10 @@
+.competitionList {
+  width: 100%;
+  display: flex;
+  flex-direction: row wrap;
+}
+
+.competitionList > * {
+  width: 320px;
+  margin: 0 15px 30px 15px;
+}

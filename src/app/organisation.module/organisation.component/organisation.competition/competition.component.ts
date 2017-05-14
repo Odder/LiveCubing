@@ -1,22 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo } from 'apollo-angular';
+import { Competition } from '../../../models/models.competition';
+import { ActivatedRoute, Params } from '@angular/router';
 import gql from 'graphql-tag';
-import {Competition} from '../../../models/models.competition';
 
-const AllCompetitors = gql`
-  query AllCompetitors { 
-    allCompetitions(first: 5) {
+const competitionDetails = gql`
+  query ($slug: String!) {
+    Competition(slug: $slug) {
+      id
+      slug
       name
-      events {
-        name
-        formats {
-          name
-        }
+      country
+      city
+      startDate
+      endDate
+      _competitorsMeta {
+        count
       }
-      competitors {
-        name
-        records {
-          region
+      events {
+        puzzle {
+          name
+          id
+        }
+        rounds {
+          _competitorsMeta {
+            count
+          }
         }
       }
     }
@@ -24,7 +33,7 @@ const AllCompetitors = gql`
 `;
 
 interface QueryResponse {
-  Competition: Competition[];
+  Competition: Competition;
 }
 
 @Component({
@@ -33,75 +42,26 @@ interface QueryResponse {
   styleUrls: ['./competition.component.scss'],
 })
 export class CompetitionComponent implements OnInit {
+  isLoading = true;
+  competition: Competition;
 
-  events;
-  loading: boolean;
-
-  constructor(private apollo: Apollo) {
-    this.events = [
-      {
-        'name': '3x3',
-        'rounds': [
-          {
-            'format': 'best of 5',
-            'round': 'first',
-            'timeLimit': '10:00',
-            'cutoff': '3:00',
-            'groups': 2,
-            'proceedFormat': 'number',
-            'proceed': 16,
-            'competitors': 25,
-          },
-          {
-            'format': 'best of 5',
-            'round': 'second',
-            'timeLimit': '10:00',
-            'cutoff': '3:00',
-            'groups': 2,
-            'proceedFormat': 'number',
-            'proceed': 16,
-            'competitors': 25,
-          }
-        ]
-      },
-      {
-        'name': '4x4',
-        'rounds': [
-          {
-            'format': 'best of 5',
-            'round': 'first',
-            'timeLimit': '10:00',
-            'cutoff': '3:00',
-            'groups': 2,
-            'proceedFormat': 'number',
-            'proceed': 16,
-            'competitors': 25,
-          },
-          {
-            'format': 'best of 5',
-            'round': 'second',
-            'timeLimit': '10:00',
-            'cutoff': '3:00',
-            'groups': 2,
-            'proceedFormat': 'number',
-            'proceed': 16,
-            'competitors': 25,
-          }
-        ]
-      }
-
-
-    ];
-  }
+  constructor(private apollo: Apollo, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.apollo.query<QueryResponse>({
-      query: AllCompetitors
-    }).subscribe(({data}) => {
-      console.log(data);
-    });
+    this.route.params
+      .switchMap((params: Params) => {
+        this.isLoading = true;
+        return this.apollo.query<QueryResponse>({
+          query: competitionDetails,
+          variables: {
+            slug: params['slug']
+          }
+        });
+      })
+      .subscribe(({data}) => {
+        this.competition = data.Competition;
+        this.isLoading = false;
+        console.log(this.competition);
+      });
   }
-
-
-
 }

@@ -41,6 +41,7 @@ export class CompetitionComponent implements OnInit {
     this.route.params
       .switchMap((params: Params) => {
         this.competitionName = params['name'];
+
         return this.apollo.query<QueryResponse>({
           query: AllEventsForCompetition,
           variables: {

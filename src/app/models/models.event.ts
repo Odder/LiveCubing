@@ -1,7 +1,10 @@
-import {MetaData} from "./models.metaData";
+import {MetaData} from './models.metaData';
+import { Puzzle } from './models.puzzle';
+import { Round } from './models.round';
 
-export interface Event{
-  name: string,
-  format: string,
-  _roundsMeta: MetaData,
+export interface Event {
+  puzzle: Puzzle;
+  _roundsMeta: MetaData;
+  id: string;
+  rounds: Round[];
 }

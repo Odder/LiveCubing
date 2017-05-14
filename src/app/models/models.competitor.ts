@@ -1,3 +1,3 @@
-export interface Competitors {
-  name: string,
+export interface Competitor {
+  name: string;
 }

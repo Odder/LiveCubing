@@ -1,0 +1,21 @@
+<md-card-title> {{ event.puzzle.name }}</md-card-title>
+<md-card-content>
+	<md-tab-group>
+		<md-tab *ngFor="let round of event.rounds" label="{{ round.roundName }}">
+			{{ round._competitorsMeta.count }} competitors,
+			Cut off: {{ round.cutoff }},
+			Time Limit: {{ round.timeLimit }},
+			{{ round.proceeding }} proceed,
+			{{ round.numberOfGroups }} groups
+		</md-tab>
+	</md-tab-group>
+</md-card-content>
+<md-card-actions>
+	<div>
+		<button md-raised-button color="primary">Results</button>
+		<button md-mini-fab color="accent" (click)="toggleNewRoundForm()">
+			<md-icon>add</md-icon>
+		</button>
+	</div>
+	<app-add-round *ngIf="isNewRoundFormVisible" [event]="event" [competitionId]="competitionId"></app-add-round>
+</md-card-actions>

@@ -1,3 +1,26 @@
-<p>
-  lobby works!
-</p>
+<h2>
+	Live Tourneys!
+</h2>
+<div class="competitionList">
+	<md-card *ngFor="let competition of competitions" [routerLink]="['/organisation/competition', competition.slug]">
+		<md-card-header>
+			<md-card-title>
+				{{ competition.name }}
+			</md-card-title>
+			<md-card-subtitle>
+				{{ competition.country }}, {{ competition.city }} <br> {{ competition.startDate | date }}, {{ competition.endDate | date }}
+			</md-card-subtitle>
+			<img md-card-md-image src="https://www.youcandothecube.com/resources/images/solve-it/solution-stage-one.jpg">
+		</md-card-header>
+		<md-card-content>
+			<b>{{ competition._competitorsMeta.count }} competitors</b><br>
+			<div *ngFor="let event of competition.events">
+				<b>{{ event.puzzle.name }}</b> ( <b>{{ event._roundsMeta.count }}</b> rounds )
+			</div>
+			<b>Notable cubers attending</b>:
+			<md-chip-list>
+				<md-chip *ngFor="let competitor of competition.competitors">{{ competitor.name }}</md-chip>
+			</md-chip-list>
+		</md-card-content>
+	</md-card>
+</div>

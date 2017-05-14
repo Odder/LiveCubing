@@ -1,0 +1,14 @@
+<div class="add-round">
+	<form (ngSubmit)="addRound()">
+	<md-input-container>
+		<input mdInput placeholder="Time limit" [(value)]="timeLimit">
+	</md-input-container>
+	<md-input-container>
+		<input mdInput placeholder="Cutoff" [(value)]="cutoff">
+	</md-input-container>
+	<md-input-container>
+		<input mdInput placeholder="Number of groups" [(value)]="numberOfGroups">
+	</md-input-container>
+	<button type="submit" md-raised-button color="primary">Add Round</button>
+	</form>
+</div>

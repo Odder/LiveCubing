@@ -1,25 +1,10 @@
 
 <div class="container">
-	<md-card class="event" *ngFor="let event of events">
-		<md-card-title> {{ event.name }} </md-card-title>
-		<md-card-content>
-			<md-tab-group>
-				<md-tab *ngFor="let round of event.rounds" label="{{ round.round }}">
-					<div class="round-content">
-						{{ round.competitors }} competitors,
-						Cut off: {{ round.cutoff }},
-						Time Limit: {{ round.timeLimit }},
-						{{ round.proceed }} proceed,
-						{{ round.groups }} groups
-					</div>
-				</md-tab>
-				<md-tab>
-					<ng-template md-tab-label><md-icon>add</md-icon></ng-template>
-				</md-tab>
-			</md-tab-group>
-		</md-card-content>
-		<md-card-actions>
-			<button md-raised-button color="primary">Results</button>
-		</md-card-actions>
-	</md-card>
+	<span *ngIf="isLoading">Loading...</span>
+	<div *ngIf="!isLoading">
+		<h1>{{competition.name}}</h1>
+		<md-card class="event" *ngFor="let event of competition.events">
+			<app-event [event]="event" [competitionId]="competition.id"></app-event>
+		</md-card>
+	</div>
 </div>

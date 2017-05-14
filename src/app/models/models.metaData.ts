@@ -1,3 +1,3 @@
 export interface MetaData {
-  count: number,
+  count: number;
 }
